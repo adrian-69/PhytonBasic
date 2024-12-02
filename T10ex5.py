@@ -1,77 +1,45 @@
-def suma(x, y):
-    return x + y
 
-def resta(x, y):
-    return x - y
-
-def multiplicacio(x, y):
-    return x * y
-
-def divisio(x, y):
-    if y != 0:
-        return x / y
+def gran_de_tres(a,b,c):
+    if a>b:
+        if b>c:
+            print("{} és major que {} que és major que {}".format(a,b,c))
+        elif b==c:
+            print("{} és major que {} que és igual que {}".format(a,b,c))
+        else:
+            if a>c:
+                print("{} és major que {} que és major que {}".format(a,c,b))
+            elif c>a:
+                print("{} és major que {} que és major que {}".format(c,a,b))  
+            else:
+                print("{} i {} són iguals i majors que {}".format(a,c,b))
+    elif b>a:
+        if a>c:
+            print("{} és major que {} que és major que {}".format(b,a,c))
+        elif a==c:
+            print("{} és major que {} que és igual que {}".format(b,a,c))
+        else:
+            if b>c:
+                print("{} és major que {} que és major que {}".format(b,c,a))
+            elif c>b:
+                print("{} és major que {} que és major que {}".format(c,b,a))
+            else:
+                print("{} i {} són iguals i majors que {}".format(b, c, a))
     else:
-        return "Error: Divisió per zero!"
+        if a>c:
+            print("{} i {} són iguals i majors que {}".format(a,b,c))
+        elif c>a:
+            print("{} és major que {} que és igual que {}".format(c,a,b))
+        else:
+            print("Tots són iguals i valen {}".format(a))
 
-def canvi_base(num, base):
-    if base == 'bin':
-        return bin(num)
-    elif base == 'oct':
-        return oct(num)
-    elif base == 'hex':
-        return hex(num)
-    else:
-        return "Error: Base no reconeguda!"
+#Programa principal
 
-def calculadora():
-    print("Opcions:")
-    print("1. Suma")
-    print("2. Resta")
-    print("3. Multiplicació")
-    print("4. Divisió")
-    print("5. Canvi de base")
-    
-    opcio = input("Tria una opció (1-5): ")
-
-    if opcio in ['1', '2', '3', '4']:
-        num1 = float(input("Introdueix el primer número: "))
-        num2 = float(input("Introdueix el segon número: "))
-
-        if opcio == '1':
-            print("Resultat:", suma(num1, num2))
-        elif opcio == '2':
-            print("Resultat:", resta(num1, num2))
-        elif opcio == '3':
-            print("Resultat:", multiplicacio(num1, num2))
-        elif opcio == '4':
-            print("Resultat:", divisio(num1, num2))
-
-    elif opcio == '5':
-        num = int(input("Introdueix un número decimal: "))
-        base = input("Introdueix la base (bin, oct, hex): ")
-        print("Resultat:", canvi_base(num, base))
-    else:
-        print("Opció no vàlida!")
-
-def gran(num1, num2):
-    return max(num1, num2)
-
-def gran_de_tres(num1, num2, num3):
-    return max(num1, num2, num3)
-
-# Proves de les funcions gran() i gran_de_tres()
-print("Proves de gran():")
-print(gran(5, 10))  # Ha de retornar 10
-print(gran(-1, -5))  # Ha de retornar -1
-print(gran(15, 25))  # Ha de retornar 25
-
-print("\nProves de gran_de_tres():")
-print(gran_de_tres(5, 10, 3))  # Ha de retornar 10
-print(gran_de_tres(-1, -5, -3))  # Ha de retornar -1
-print(gran_de_tres(15, 25, 20))  # Ha de retornar 25
-print(gran_de_tres(7, 7, 7))  # Ha de retornar 7
-
-# Inicia la calculadora
-calculadora()
-
+gran_de_tres(1,1,1)
+gran_de_tres(1,2,3)
+gran_de_tres(3,2,1)
+gran_de_tres(2,3,1)
+gran_de_tres(2,1,3)
+gran_de_tres(2, 2, 3)
+gran_de_tres(1, 2, 2)
+gran_de_tres(1, 3, 1)
 
